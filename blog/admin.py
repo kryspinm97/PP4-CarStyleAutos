@@ -8,8 +8,10 @@ class CarAdmin(SummernoteModelAdmin):
     """ Car Admin model """
 
     list_display = ('make', 'model', 'year')
+    list_filter = ('created_date', 'year')
     summernote_fields = ('specifications', 'rundown')
-
+    prepopulated_fields = {'slug': ('site_user', 'make', 'model', 'year')}
+    search_fields = ['make', 'model', 'year']
 
 @admin.register(Comment)
 class CommentAdmin(SummernoteModelAdmin):
