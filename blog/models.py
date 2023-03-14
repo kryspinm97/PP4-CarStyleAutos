@@ -24,7 +24,7 @@ class Car(models.Model):
     class Meta:
         """List posts in a descending order"""
 
-        ordering = ["-posted_date"]
+        ordering = ["-created_date"]
 
     def __str__(self):
         """Generating a title"""
