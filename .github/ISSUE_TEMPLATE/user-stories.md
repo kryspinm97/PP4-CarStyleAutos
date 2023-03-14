@@ -1,6 +1,6 @@
 ---
 name: User Stories
-about: 'User Story : <Title>'
+about: 'User Story : '
 title: ''
 labels: ''
 assignees: ''
