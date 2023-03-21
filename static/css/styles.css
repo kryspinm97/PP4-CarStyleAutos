@@ -1,0 +1,136 @@
+body {
+    font-family : 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    color:#333;
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.nav-link {
+    color: #333;
+}
+
+.navbar-toggler-icon {
+   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dropdown-menu {
+    background-color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #f2f2f2;
+}
+
+.btn-outline-success {
+    color: #fff;
+    border-color: #dc4545;
+    background-color:#dc3545;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-text h1, .hero-text p {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron {
+   background-image: url("../images/cartest.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 75vh;
+   position: relative;
+   color: #fff;
+}
+
+.jumbotron:before {
+    content: "";
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.jumbotron .display-5 {
+    font-size: 4rem;
+    font-weight: 300;
+    text-shadow: 1px 1px #000000;
+    margin-top: 120px;
+}
+
+.jumbotron .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px #000000;
+}
+
+.jumbotron h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.jumbotron p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.btn-primary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-link {
+    color:#fff;
+}
+
+.footer-link:hover {
+    color: #dc3545
+}
+
+.footer-social-icon i{
+    color: #333;
+}
+
+.footer-social-icon:hover i{
+    color:#dc3545;
+}
