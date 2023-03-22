@@ -11,12 +11,14 @@ h2 {
     text-transform: uppercase;
 }
 
+.carousel-inner {
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.9);
+}
 
 .carousel-item img {
     height: 400px;
     width: 600px;
     object-fit: cover;
-    border-radius: 25px;
 }
 
 .navbar {
@@ -109,6 +111,20 @@ h2 {
     margin-bottom: 2rem;
 }
 
+
+.hero-image {
+    background-image: url(../images/ferrari-mclaren.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+
+.gallery-text {
+    text-align: center;
+    position: absolute;
+}
 
 .card:hover {
     box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);

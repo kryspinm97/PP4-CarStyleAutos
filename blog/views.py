@@ -10,3 +10,9 @@ class Home(View):
 
     def get(self, request):
         return render(request, 'index.html')
+
+
+class CarGallery(View):
+
+    def get(self, request):
+        return render(request, 'car_gallery.html')
