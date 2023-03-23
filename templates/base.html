@@ -21,7 +21,6 @@
 <body>
 
   <!-- Navigation Bar Section -->
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Car<span>Style</span>Autos</a>
@@ -50,56 +49,33 @@
           </li>
         </ul>
         <form class="d-flex">
-          <button class="btn btn-secondary px-3" type="submit">Login</button>
-          <button class="btn btn-outline-success ms-1" type="submit">
-            Register
-          </button>
+          <a href ="{% url 'login' %}" class="btn btn-secondary px-3" type="submit">Login</a>
+          <a href ="{% url 'register' %}" class="btn btn-outline-success ms-1" type="submit">Register</a>
         </form>
       </div>
     </div>
   </nav>
-
   <!-- Navigation Bar Section -->
 
   {% block content %}
   <!-- Content from other pages extending this template.-->
   {% endblock content %}
 
+  <!-- Page Footer -->
   <footer class="footer text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-2 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-2">
-        <!-- Facebook -->
-        <a class="btn text-white btn-floating m-1 btn-facebook" href="#!" role="button"><i
-            class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn text-white btn-floating m-1 btn-twitter" href="#!" role="button"><i
-            class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
+    <div class="container p-1 pb-0">
+      <section class="mb-1">
+        <a class="btn text-white btn-floating m-1 btn-facebook" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn text-white btn-floating m-1 btn-twitter" href="#!" role="button"><i class="fab fa-twitter"></i></a>
         <a class="btn text-white btn-floating m-1 btn-google" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn text-white btn-floating m-1 btn-instagram" href="#!" role="button"><i
-            class="fab fa-instagram"></i></a>
-
-        <!-- Github -->
+        <a class="btn text-white btn-floating m-1 btn-instagram" href="#!" role="button"><i class="fab fa-instagram"></i></a>
         <a class="btn text-white btn-floating m-1 btn-github" href="#!" role="button"><i class="fab fa-github"></i></a>
       </section>
-      <!-- Section: Social media -->
     </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-2">
-      © 2023 Copyright:
-      <a class="text-white" href="#">CarStyleAutos.Kryspin</a>
-    </div>
-    <!-- Copyright -->
+    <div class="text-center p-2">© 2023 Copyright:<a class="text-white" href="#">CarStyleAutos.Kryspin</a></div>
   </footer>
-
+ <!-- Page Footer -->
+ 
 </body>
 
 <!-- Boostrap & Jquery Scripts-->

@@ -112,7 +112,7 @@ h2 {
 }
 
 
-.hero-image {
+.hero-image-gallery {
     background-image: url(../images/ferrari-mclaren.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -133,37 +133,10 @@ h2 {
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
-.footer-logo {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #dc3545;
-}
-
-.footer-logo span {
-    color: #333;
-}
-
-.footer-social {
-    margin-top: 1rem;
-}
-
-.footer-text {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-}
-
-.footer-link {
-    color: #fff;
-}
-
-.footer-social-icon i {
-    color: #fff;
-}
 
 /* --- BUTTON STYLING --- */
 
@@ -229,7 +202,7 @@ h2 {
 }
 
 .btn-github {
-    background-color: #333333;
+    background-color: #000000;
     border-radius: 25px;
 }
 

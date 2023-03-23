@@ -16,3 +16,15 @@ class CarGallery(View):
 
     def get(self, request):
         return render(request, 'car_gallery.html')
+
+
+class LoginView(View):
+
+    def get(self, request):
+        return render(request, 'account/login.html')
+
+
+class RegisterView(View):
+
+    def get(self ,request):
+        return render(request, 'account/register.html')
