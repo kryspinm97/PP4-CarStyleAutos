@@ -8,7 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CarStyleAutos</title>
-  <link rel="shortcut icon" type="image/png" href="../static/images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
@@ -36,21 +35,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'cargallery' %}">Gallery</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Sort Cars
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
-              <li><a class="dropdown-item" href="#">Classic Cars</a></li>
-              <li><a class="dropdown-item" href="#">Sports Cars</a></li>
-              <li><a class="dropdown-item" href="#">Custom Builds</a></li>
-            </ul>
-          </li>
         </ul>
         <form class="d-flex">
-          <a href ="{% url 'login' %}" class="btn btn-secondary px-3" type="submit">Login</a>
-          <a href ="{% url 'register' %}" class="btn btn-outline-success ms-1" type="submit">Register</a>
+          <a href="{% url 'login' %}" class="btn btn-secondary ms-1 text-center" type="submit">Login</a>
+          <a href="{% url 'register' %}" class="btn btn-outline-success ms-1" type="submit">Register</a>
         </form>
       </div>
     </div>
@@ -65,17 +53,20 @@
   <footer class="footer text-center text-white">
     <div class="container p-1 pb-0">
       <section class="mb-1">
-        <a class="btn text-white btn-floating m-1 btn-facebook" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        <a class="btn text-white btn-floating m-1 btn-twitter" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn text-white btn-floating m-1 btn-facebook" href="#!" role="button"><i
+            class="fab fa-facebook-f"></i></a>
+        <a class="btn text-white btn-floating m-1 btn-twitter" href="#!" role="button"><i
+            class="fab fa-twitter"></i></a>
         <a class="btn text-white btn-floating m-1 btn-google" href="#!" role="button"><i class="fab fa-google"></i></a>
-        <a class="btn text-white btn-floating m-1 btn-instagram" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn text-white btn-floating m-1 btn-instagram" href="#!" role="button"><i
+            class="fab fa-instagram"></i></a>
         <a class="btn text-white btn-floating m-1 btn-github" href="#!" role="button"><i class="fab fa-github"></i></a>
       </section>
     </div>
     <div class="text-center p-2">© 2023 Copyright:<a class="text-white" href="#">CarStyleAutos.Kryspin</a></div>
   </footer>
- <!-- Page Footer -->
- 
+  <!-- Page Footer -->
+
 </body>
 
 <!-- Boostrap & Jquery Scripts-->
