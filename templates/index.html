@@ -3,15 +3,18 @@
 {% block content %}
 
 <!-- Hero Section -->
-<div class="jumbotron jumbotron-overlay jumbotron-fluid">
-  <div class="hero-text">
-    <h1 class="display-5">Welcome to CarStyleAutos!</h1>
-    <p class="lead">A Community built around the love for all types of cars, Classic, JDM you name it! </p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Join Us</a>
-    </p>
+<section class="home-image jumbotron-overlay jumbotron-fluid py-md-5">
+  <div class="container">
+    <div class="hero-text text-center text-wrap">
+      <h1 class="display-5 fs-1">Welcome to CarStyleAutos!</h1>
+      <p class="lead fs-4">A Community built around the love for all types of automobiles</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Join Us</a>
+      </p>
+    </div>
   </div>
-</div>
+</section>
+
 <!-- Hero Section -->
 
 <!-- Page Divider -->
@@ -74,11 +77,11 @@
 <!-- Page Divider -->
 
 <!-- Card Section for Builds -->
-<section class="py-3">
-  <div class="container-fluid align-items-center justify-content-center">
+<section class="py-1">
+  <div class="container align-items-center justify-content-center">
     <section class="row">
-      <div class="col-md-4">
-        <div class="card">
+      <div class="col-md-4 py-3">
+        <div class="card card-home h-100">
           <img class="card-img-top card-image" src="../static/images/like-image.jpg" alt="Card image cap">
           <div class="card-body">
             <h3 class="card-title fw-bold">Like Builds</h4>
@@ -89,8 +92,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
+      <div class="col-md-4 py-3">
+        <div class="card card-home h-100">
           <img class="card-img-top card-image" src="../static/images/interact-image.png" alt="Card image cap">
           <div class="card-body">
             <h3 class="card-title fw-bold">Interact</h3>
@@ -101,8 +104,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
+      <div class="col-md-4 py-3">
+        <div class="card card-home h-100">
           <img class="card-img-top card-image" src="../static/images/evo9.jpg" alt="Card image cap">
           <div class="card-body">
             <h3 class="card-title fw-bold">Share your Creations</h3>

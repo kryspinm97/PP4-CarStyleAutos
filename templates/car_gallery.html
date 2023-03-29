@@ -2,26 +2,29 @@
 {% load static % }
 {% block content %}
 
-<!-- Car Gallery Section -->
+<!-- Hero-Image-Gallery -->
 
 <section class="hero-image-gallery d-flex justify-content-center align-items-center">
    
 </section>
 
-<section class="py-3">
-    <div class="container align-items-center justify-content-center">
-        <section class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="../static/images/cartest.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Car Test</h5>
-                        <p class="card-text">Section for All Posted Car Builds</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
+<!-- Hero-Image-Gallery -->
+<section class="container align-items-center justify-content-center">
+    <div class="row">
+        {% for car in cars %}
+        <div class="col-md-4 py-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ car.car_image.url }}">
+                <div clas="card-body">
+                    <h5 class="card-title">{{ car.make }} {{ car.model }}</h5>
+                    <p class="card-text"> {{ car.rundown }}</p>
+                    <a href="#" class="btn btn-primary"> View Details</a>
             </div>
-        </section>
+        </div>
+    </div>
 </section>
+    {% endfor %}
+
+<!-- Car Gallery Section -->
 
 {% endblock %}

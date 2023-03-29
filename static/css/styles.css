@@ -1,3 +1,5 @@
+/*-- GENERAL BODY/HTML --*/
+
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -11,25 +13,14 @@ h2 {
     text-transform: uppercase;
 }
 
-.carousel-inner {
-    box-shadow: 0px 6px 10px rgba(0,0,0,0.9);
-}
+/*-- GENERAL BODY/HTML --*/
 
-.carousel-item img {
-    height: 400px;
-    width: 600px;
-    object-fit: cover;
-}
 
-.card-image {
-    height: 350px;
-    object-fit: cover;
-}
+/*-- BASE.HTML STYLING NAVBAR/HERO/FOOTER/ --*/
 
 .navbar {
     background-color: #fff;
 }
-
 
 .navbar-brand {
     font-size: 1.5rem;
@@ -48,19 +39,48 @@ h2 {
     color: #333;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.home-image {
+    background-image: url(../images/cartest.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    position: relative;
+    color:#fff;
 }
 
-.dropdown-menu {
-    background-color: #fff;
+.home-image:before {
+    content: "";
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.dropdown-item:hover {
-    background-color: #f2f2f2;
+.home-image .display-5 {
+    font-size: 4rem;
+    font-weight: 300;
+    text-shadow: 1px 1px #000000;
+    margin-top: 120px;
 }
 
+.home-image .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px #000000;
+}
 
+.home-image h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.home-image p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
 
 .hero-text {
     position: relative;
@@ -74,48 +94,27 @@ h2 {
     z-index: 1;
 }
 
-.jumbotron {
-    background-image: url("../images/cartest.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 70vh;
-    position: relative;
+.carousel-inner {
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.9);
+}
+
+.carousel-item img {
+    height: 400px;
+    width: 600px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #333;
     color: #fff;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-.jumbotron:before {
-    content: "";
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
+/*-- BASE.HTML STYLING HERO/FOOTER/ --*/
 
-.jumbotron .display-5 {
-    font-size: 4rem;
-    font-weight: 300;
-    text-shadow: 1px 1px #000000;
-    margin-top: 120px;
-}
 
-.jumbotron .lead {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-shadow: 1px 1px #000000;
-}
-
-.jumbotron h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.jumbotron p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
+/*-- CAR GALLERY --*/
 
 .hero-image-gallery {
     background-image: url(../images/ferrari-mclaren.jpg);
@@ -131,13 +130,20 @@ h2 {
     position: absolute;
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+/*-- CAR GALLERY --*/
+
+/*-- CARDS --*/
+
+.card-image {
+    height: 250px;
+    object-fit: cover;
 }
 
+.card-home {
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+/*-- CARDS --*/
 
 /* --- BUTTON STYLING --- */
 
@@ -215,4 +221,39 @@ h2 {
 .btn-instagram {
     background-color: #ac2bac;
     border-radius: 25px;
+}
+
+/* --- BUTTON STYLING --- */
+
+/* --- LOGIN FORM --- */
+
+.login-form {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.login-page-image::before {
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.login-page-image {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin-bottom: -100px;
+}
+
+/* --- LOGIN FORM --- */
+
+.register-form {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }

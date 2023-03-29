@@ -15,7 +15,9 @@ class Home(View):
 class CarGallery(View):
 
     def get(self, request):
-        return render(request, 'car_gallery.html')
+        cars = Car.objects.all()
+        context = {'cars': cars}
+        return render(request, 'car_gallery.html', context)
 
 
 class LoginView(View):
@@ -26,5 +28,5 @@ class LoginView(View):
 
 class RegisterView(View):
 
-    def get(self ,request):
+    def get(self, request):
         return render(request, 'account/register.html')
