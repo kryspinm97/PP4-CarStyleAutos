@@ -8,4 +8,5 @@ urlpatterns = [
     path('car_gallery/', views.CarGallery.as_view(), name='cargallery'),
     path('account/login', views.LoginView.as_view(), name='login'),
     path('account/register', views.RegisterView.as_view(), name='register'),
+    path('account/logout/', views.LogoutView.as_view(), name='logout'),
 ]

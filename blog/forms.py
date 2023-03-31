@@ -10,12 +10,11 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = User
 
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ["username", "email", "password1", "password2"]
 
 
 class CarCreationForm(forms.ModelForm):
-
     class Meta:
         model = Car
 
-        fields = ['make', 'model', 'year', 'specifications', 'rundown', 'car_image']
+        fields = ["make", "model", "year", "specifications", "rundown", "car_image"]
