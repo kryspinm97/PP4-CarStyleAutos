@@ -27,7 +27,7 @@ class CarGallery(View):
 class LoginView(SuccessMessageMixin, View):
     template_name = 'account/login.html'
     success_url = reverse_lazy('home')
-    success_message = 'You have successfully logged in!'
+    success_message = f'Welcome {{user.username}}'
 
     def get(self, request):
         if request.user.is_authenticated:
