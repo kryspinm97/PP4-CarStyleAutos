@@ -27,7 +27,7 @@ class CarGallery(View):
 class LoginView(SuccessMessageMixin, View):
     template_name = 'account/login.html'
     success_url = reverse_lazy('home')
-    success_message = f'Welcome {{user.username}}'
+    success_message = 'You have logged in successfully!'
 
     def get(self, request):
         if request.user.is_authenticated:
@@ -84,10 +84,10 @@ def create_car(request):
             car = form.save(commit=False)
             car.site_user = request.user
             car.save()
-            messages.success(request, "Car Added Successfuly")
-            return redirect("car_detail", pk=car.pk)
+            messages.success(request, "Post Added Successfuly")
+            return redirect('cargallery')
         else:
             messages.error(request, "Invalid car details")
     else:
         form = CarCreationForm()
-    return render(request, "create_car.html", {"form": form})
+    return render(request, "addpost_form.html", {"form": form})

@@ -9,16 +9,18 @@
 </section>
 
 <!-- Hero-Image-Gallery -->
-<section class="container align-items-center justify-content-center">
+<section class="container align-items-center justify-content-center py-1">
     <div class="row">
         {% for car in cars %}
-        <div class="col-md-4 py-3">
-            <div class="card">
+        <div class="col-md-6 py-3">
+            <div class="card h-100">
                 <img class="card-img-top" src="{{ car.car_image.url }}">
-                <div clas="card-body">
-                    <h5 class="card-title">{{ car.make }} {{ car.model }}</h5>
-                    <p class="card-text"> {{ car.rundown }}</p>
-                    <a href="#" class="btn btn-primary"> View Details</a>
+                <div class="card-body">
+                    <h3 class="card-title text-center text-uppercase py-2 fw-bold">{{ car.make }} {{ car.model }}</h3>
+                <div class="text-center py-2">
+                    <a href="#" class="btn btn-primary text-center py-2"> View Post</a>
+                </div>
+                <div class="card-footer text-muted small text-center"> Author : {{ car.site_user.username }}</div>
             </div>
         </div>
     </div>

@@ -109,6 +109,7 @@ h2 {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    margin-top: auto !important;
 }
 
 /*-- BASE.HTML STYLING HERO/FOOTER/ --*/
@@ -240,8 +241,7 @@ h2 {
 /* --- LOGIN FORM --- */
 
 .login-form {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
 }
 
 .login-page-image::before {
@@ -266,6 +266,5 @@ h2 {
 /* --- LOGIN FORM --- */
 
 .register-form {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
 }

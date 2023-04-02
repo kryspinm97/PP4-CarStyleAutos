@@ -6,6 +6,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('car_gallery/', views.CarGallery.as_view(), name='cargallery'),
+    path('addpost_form/', views.create_car, name='addpost_form'),
     path('account/login', views.LoginView.as_view(), name='login'),
     path('account/register', views.RegisterView.as_view(), name='register'),
     path('account/logout/', views.LogoutView.as_view(), name='logout'),
