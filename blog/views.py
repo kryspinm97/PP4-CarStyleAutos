@@ -77,7 +77,7 @@ class RegisterView(View):
 
 
 @login_required
-def create_car(request):
+def add_post(request):
     if request.method == "POST":
         form = CarCreationForm(request.POST, request.FILES)
         if form.is_valid():
