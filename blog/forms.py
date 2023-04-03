@@ -14,13 +14,16 @@ class RegistrationForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
 
 
-class CarCreationForm(forms.ModelForm):
+class CarForm(forms.ModelForm):
     class Meta:
 
         model = Car
-        fields = ["make", "model", "year", "specifications", "rundown", "car_image"]   
+        fields = ('make', 'model', 'year', 'specifications', 'rundown', 'car_image')
         widgets = {
             'specifications': SummernoteWidget(),
             'rundown': SummernoteWidget(),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['car_image'].required = True

@@ -266,7 +266,11 @@ h2 {
 /* --- LOGIN FORM --- */
 
 .register-form {
-    margin-top: 10rem;
+    margin-top: auto;
+}
+
+.login-form {
+    margin-top: auto;
 }
 
 .add-post-form {

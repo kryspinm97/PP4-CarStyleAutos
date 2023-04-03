@@ -16,10 +16,11 @@ class Car(models.Model):
         User, on_delete=models.CASCADE, related_name="car_user"
     )
     created_date = models.DateTimeField(auto_now_add=True)
-    year = models.IntegerField()
+    year = models.PositiveSmallIntegerField()
     specifications = models.TextField()
     rundown = models.TextField()
     car_image = CloudinaryField("image")
+    
     likes = models.ManyToManyField(User, related_name="car_likes", blank=True)
 
     class Meta:
@@ -35,7 +36,7 @@ class Car(models.Model):
         self.likes.add(user)
 
     def get_absolute_url(self):
-        return reverse("gallery")
+        return reverse("cargallery")
 
 
 class Comment(models.Model):
