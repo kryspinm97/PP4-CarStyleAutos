@@ -183,7 +183,7 @@ def like_comment(request, comment_id):
 @login_required
 @require_POST
 def like_car_post(request, car_id):
-    
+
     car = get_object_or_404(Car, id=car_id)
 
     if car.likes.filter(id=request.user.id).exists():
