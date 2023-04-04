@@ -37,26 +37,20 @@ ALLOWED_HOSTS = ['carstyleautos-blog.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django.contrib.humanize',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    'django.contrib.postgres',
-    'django.contrib.gis',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'cloudinary_storage',
-    'cloudinary',
-    'allauth',
-    'allauth.account'
-    'allauth.socialaccount',
-    'django.contrib.staticfiles',
-    'bootstrap4',
     'blog',
 ]
 
