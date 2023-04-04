@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h3 class="card-title text-center text-uppercase py-2 fw-bold">{{ car.make }} {{ car.model }}</h3>
                 <div class="text-center py-2">
-                    <a href="#" class="btn btn-primary text-center py-2"> View Post</a>
+                    <a href="{% url 'view_car_post' car.slug %}" class="btn btn-primary text-center py-2"> View Post</a>
                 </div>
                 <div class="card-footer text-muted small text-center"> Author : {{ car.site_user.username }}</div>
             </div>

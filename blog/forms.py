@@ -1,5 +1,6 @@
 from django import forms
 from .models import Car
+from .models import Comment
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django_summernote.widgets import SummernoteWidget
@@ -27,3 +28,15 @@ class CarForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['car_image'].required = True
+
+
+class CommentForm(forms.ModelForm):
+    text = forms.CharField(widget=forms.Textarea(attrs={
+        'class': 'form-control',
+        'placeholder' : 'Leave a comment...',
+        'rows': 3,
+    }))
+
+    class Meta:
+        model = Comment
+        fields = ['text']
