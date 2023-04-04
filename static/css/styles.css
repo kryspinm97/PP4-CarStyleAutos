@@ -39,6 +39,10 @@ h2 {
     color: #333;
 }
 
+.nav-item {
+    font-size: 1.15rem;
+}
+
 .home-image {
     background-image: url(../images/cartest.jpg);
     background-position: center;
@@ -155,6 +159,10 @@ h2 {
 .btn-primary {
     background-color: #dc3545;
     border-color: #dc3545;
+    border-radius: 50px;
+}
+
+.btn-warning {
     border-radius: 50px;
 }
 

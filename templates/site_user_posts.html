@@ -3,6 +3,34 @@
 {% load static %}
 {% block content %}
 
+<div class="container my-5">
+    <h1 class="mb-5 text-center">Posts By {{ user.username }}</h1>
+  
+    {% if cars %}
+    <div class="row">
+      {% for car in cars %}
+      <div class="col-md-4 py-3">
+        <div class="card h-100">
+          <img class="card-img-top h-100" src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ car.make }} {{ car.model }} {{ car.year }}</h5>
+            <div class="text-center py-2">
+              <a href="{% url 'view_car_post' car.slug %}" class="btn btn-primary text-center py-2">View Post</a>
+              <a href="#" class="btn btn-secondary text-center py-2">Edit Post</a>
+              <a href="#" class="btn btn-warning text-center py-2">Delete Post</a>
+            </div>
+          </div>
+          <div class="card-footer text-muted small text-center">Author: {{ car.site_user.username }}
+            <p class="float-end">Likes: {{ car.likes.all.count }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No posts yet</p>
+    {% endif %}
+  </div>
 
 
 

@@ -12,6 +12,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 from .models import Car, Comment
 from .forms import RegistrationForm, CarForm, CommentForm
 from django.utils.text import slugify
@@ -148,6 +149,22 @@ class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
         # Only allow staff or comment author to delete comment
         comment = get_object_or_404(Comment, id=self.kwargs["comment_id"])
         return self.request.user == comment.author or self.request.user.is_staff
+
+
+class UserPostsListView(ListView):
+    model = Car
+    template_name = 'site_user_posts.html'
+    context_object_name = 'cars'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs['username'])
+        return Car.objects.filter(site_user=user).order_by('-created_date')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['site_user'] = get_object_or_404(User, username=self.kwargs['username'])
+        return context
 
 
 @require_POST
