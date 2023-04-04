@@ -207,9 +207,12 @@ def edit_car_post(request, slug):
             form.save()
             messages.success(request, 'Your car post has been updated!')
             return redirect('view_car_post', slug=car.slug)
-        
+
     else:
         form = CarForm(instance=car)
+        form.fields['rundown'].initial = car.rundown
+        form.fields['specifications'].initial = car.specifications
+        return render(request, 'editpost_form.html', {'form': form, 'car': car})
 
     context = {
         'form': form

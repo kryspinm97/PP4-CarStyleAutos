@@ -44,7 +44,7 @@ h2 {
 }
 
 .home-image {
-    background-image: url(../images/cartest.jpg);
+    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1680618530/static/images/cartest.ae3b3d7bddb9.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,7 +122,7 @@ h2 {
 /*-- CAR GALLERY --*/
 
 .hero-image-gallery {
-    background-image: url(../images/ferrari-mclaren.jpg);
+    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1680618528/static/images/ferrari-mclaren.42423c012a27.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

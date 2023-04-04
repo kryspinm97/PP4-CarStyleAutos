@@ -17,15 +17,15 @@
                   {% csrf_token %}
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_make">Make</label>
-                    <input type="text" id="id_make" name="make" class="form-control" />
+                    <input type="text" id="id_make" name="make" class="form-control" value="{{ car.make }}" />
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_model">Model</label>
-                    <input type="text" id="id_model" name="model" class="form-control" />
+                    <input type="text" id="id_model" name="model" class="form-control" value="{{ car.model }}" />
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_year">Year</label>
-                    <input type="number" id="id_year" name="year" class="form-control" min="1900" max="2099" step="1" />
+                    <input type="number" id="id_year" name="year" class="form-control" min="1900" max="2099" step="1" value="{{ car.year }}" />
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_specifications">Specifications</label>
@@ -41,7 +41,7 @@
                     <small class="text-muted">Leave this blank if you don't want to change your image.</small>
                   </div>
                   <div class="d-flex justify-content-center mx-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Update Post</button>
                   </div>
                 </form>
               </div>
