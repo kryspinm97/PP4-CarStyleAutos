@@ -191,3 +191,28 @@ def like_car_post(request, car_id):
     else:
         car.likes.add(request.user)
     return redirect('view_car_post', slug=car.slug)
+
+
+@login_required
+def edit_car_post(request, slug):
+    car = get_object_or_404(Car, slug=slug)
+
+    if request.user != car.site_user:
+        messages.warning(request, "You can't edit this post.")
+        return redirect('home')
+
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES, instance=car)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your car post has been updated!')
+            return redirect('view_car_post', slug=car.slug)
+        
+    else:
+        form = CarForm(instance=car)
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'editpost_form.html', context)

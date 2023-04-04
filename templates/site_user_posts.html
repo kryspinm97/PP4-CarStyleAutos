@@ -16,7 +16,7 @@
             <h5 class="card-title">{{ car.make }} {{ car.model }} {{ car.year }}</h5>
             <div class="text-center py-2">
               <a href="{% url 'view_car_post' car.slug %}" class="btn btn-primary text-center py-2">View Post</a>
-              <a href="#" class="btn btn-secondary text-center py-2">Edit Post</a>
+              <a href="{% url 'edit_post' car.slug %}" class="btn btn-secondary text-center py-2">Edit Post</a>
               <a href="#" class="btn btn-warning text-center py-2">Delete Post</a>
             </div>
           </div>

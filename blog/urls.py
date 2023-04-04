@@ -15,4 +15,5 @@ urlpatterns = [
     path('like-car-post/<int:car_id>/', views.like_car_post, name='like_car_post'),
     path('delete-comment/<int:comment_id>/', views.DeleteCommentView.as_view(), name='delete_comment'),
     path('user-posts/<str:username>/', views.UserPostsListView.as_view(), name='user_posts'),
+    path('edit-post/<slug:slug>/', views.edit_car_post, name='edit_post'),
 ]
