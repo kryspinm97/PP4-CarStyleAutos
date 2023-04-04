@@ -11,5 +11,7 @@ urlpatterns = [
     path("account/logout/", views.LogoutView.as_view(), name="logout"),
     path("addpost_form", views.AddPost.as_view(), name="addpost"),
     path("car/<slug:slug>/", views.ViewCarPost.as_view(), name="view_car_post"),
-    path('like-comment/<int:pk>/', views.like_comment, name='like_comment'),
+    path('like-comment/<int:comment_id>/', views.like_comment, name='like_comment'),
+    path('like-car-post/<int:car_id>/', views.like_car_post, name='like_car_post'),
+    path('delete-comment/<int:comment_id>/', views.DeleteCommentView.as_view(), name='delete_comment'),
 ]

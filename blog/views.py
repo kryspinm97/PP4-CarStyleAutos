@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.views import generic, View
 from django.views.decorators.http import require_POST
@@ -7,11 +9,12 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from .models import Car, Comment
 from .forms import RegistrationForm, CarForm, CommentForm
+from django.utils.text import slugify
 
 
 class Home(View):
@@ -21,8 +24,14 @@ class Home(View):
 
 class CarGallery(View):
     def get(self, request):
-        cars = Car.objects.all()
-        context = {"cars": cars}
+        car_list = Car.objects.all()
+        paginator = Paginator(car_list, 6)  # Show 6 Cars per page
+        page_number = request.GET.get("page")
+        cars = paginator.get_page(page_number)
+        context = {
+            "cars": cars,
+        }
+
         return render(request, "car_gallery.html", context)
 
 
@@ -88,10 +97,10 @@ class AddPost(View):
         car_form = CarForm(request.POST, request.FILES)
 
         if car_form.is_valid():
-            Car = car_form.save(commit=False)
-            Car.site_user = request.user
-            Car.slug = slugify(f"{car.make} {car.model} {car.year}").replace(" ", "-")
-            Car.save()
+            car = car_form.save(commit=False)
+            car.site_user = request.user
+            car.slug = slugify(f"{car.make} {car.model} {car.year}").replace(" ", "-")
+            car.save()
             messages.success(request, "Post has been added Successfully")
             return redirect("cargallery")
         else:
@@ -123,20 +132,45 @@ class ViewCarPost(View):
             return render(request, "view_car_post.html", context)
 
 
+class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def post(self, request, comment_id):
+        comment = get_object_or_404(Comment, id=comment_id)
+
+        if request.user == comment.author or request.user.is_staff:
+            comment.delete()
+            messages.success(request, "Comment deleted successfully")
+        else:
+            messages.error(request, "You are not authorized to delete this comment.")
+
+        return redirect("view_car_post", slug=comment.car.slug)
+
+    def test_func(self):
+        # Only allow staff or comment author to delete comment
+        comment = get_object_or_404(Comment, id=self.kwargs["comment_id"])
+        return self.request.user == comment.author or self.request.user.is_staff
+
+
 @require_POST
 @login_required
-def like_comment(request):
-    comment_id = request.POST.get("comment_id")
-    action = request.POST.get("action")
+def like_comment(request, comment_id):
 
-    if comment_id and action:
-        try:
-            comment = Comment.objects.get(id=comment_id)
-            if action == "like":
-                comment.likes.add(request.user)
-            else:
-                comment.likes.remove(request.user)
-            return JsonResponse({"status": "ok"})
-        except:
-            pass
-        return JsonResponse({"status": "error"})
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.likes.filter(id=request.user.id).exists():
+        comment.likes.remove(request.user)
+    else:
+        comment.likes.add(request.user)
+    return redirect('view_car_post', slug=comment.car.slug)
+
+
+@login_required
+@require_POST
+def like_car_post(request, car_id):
+    
+    car = get_object_or_404(Car, id=car_id)
+
+    if car.likes.filter(id=request.user.id).exists():
+        car.likes.remove(request.user)
+    else:
+        car.likes.add(request.user)
+    return redirect('view_car_post', slug=car.slug)

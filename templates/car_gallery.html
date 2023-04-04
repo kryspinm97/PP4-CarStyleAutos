@@ -4,11 +4,6 @@
 
 <!-- Hero-Image-Gallery -->
 
-<section class="hero-image-gallery d-flex justify-content-center align-items-center">
-   
-</section>
-
-<!-- Hero-Image-Gallery -->
 <section class="container align-items-center justify-content-center py-1">
     <div class="row">
         {% for car in cars %}
@@ -20,13 +15,32 @@
                 <div class="text-center py-2">
                     <a href="{% url 'view_car_post' car.slug %}" class="btn btn-primary text-center py-2"> View Post</a>
                 </div>
-                <div class="card-footer text-muted small text-center"> Author : {{ car.site_user.username }}</div>
+                <div class="card-footer text-muted small text-center">Author : {{ car.site_user.username }}
+                     <p class="float-end">Likes : {{ car.likes.all.count }}</p>
+                </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </section>
-   
+
+<div class="pagination justify-content-center text-center my-4">
+    <span class="step-links">
+        {% if cars.has_previous %}
+            <a class="btn btn-primary" href="?page={{ cars.previous_page_number }}">&lsaquo; Previous</a>
+        {% endif %}
+
+        <span class="current-page mx-3">
+            Page {{ cars.number }} of {{ cars.paginator.num_pages }}
+        </span>
+
+        {% if cars.has_next %}
+            <a class="btn btn-primary" href="?page={{ cars.next_page_number }}">Next &rsaquo;</a>
+
+        {% endif %}
+    </span>
+</div>
+
 
 <!-- Car Gallery Section -->
 

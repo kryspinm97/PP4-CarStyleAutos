@@ -3,50 +3,101 @@
 
 {% block content %}
 
+
 <div class="container my-5">
-    <div class="row">
-      <div class="col-md-8">
-        <h1>{{ car.make }} {{ car.model }} ({{ car.year }})</h1>
-        <img src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }} image" class="img-fluid">
-        <p>{{ car.specifications }}</p>
-        <p>{{ car.rundown }}</p>
-        <hr>
-        <h2>Comments</h2>
-        <form method="post">
-          {% csrf_token %}
-          {{ comment_form.as_p }}
-          <button type="submit" class="btn btn-primary my-2">Add Comment</button>
-        </form>
-        {% if car.comments.all %}
-          {% for comment in car.comments.all %}
-            <div class="card my-3">
-              <div class="card-body">
-                <h4 class="card-title">{{ comment.author }}</h4>
-                <p class="card-text">{{ comment.text }}</p>
-                <a href="{% url 'like_comment' comment.id %}" class="btn btn-outline-primary btn-sm">{{ comment.likes.all.count }} Likes</a>
-              </div>
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <div class="card">
+        <img src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }} image" class="card-img-top">
+        <div class="card-body text-center">
+          <h1 class="card-title fw-bold">{{ car.make }} {{ car.model }} ({{ car.year }})</h1>
+          <div class="container">
+            <hr class="my-4">
+          </div>
+          <p class="card-text text-center">
+            <h2>SPECIFICATIONS</h2>
+            {{ car.specifications|safe }}
+          </p>
+          <div class="container">
+            <hr class="my-4">
+          </div>
+          <p class="card-text">
+            <h2>RUNDOWN</h2>
+            {{ car.rundown|safe }}
+          </p>
+          <div class="container">
+            <hr class="my-4">
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="author">
+              Author: {{ car.site_user.username }}
             </div>
-          {% endfor %}
-        {% else %}
-          <p>No comments yet</p>
-        {% endif %}
+            <form method="POST" class="like-form" action="{% url 'like_car_post' car.id %}">
+              {% csrf_token %}
+              <input type="hidden" name="action" value="{% if user in car.likes.all %}unlike{% else %}like{% endif %}">
+              <button type="submit" class="btn btn-secondary btn-md">
+                  {% if user in car.likes.all %}
+                  Unlike
+                  {% else %}
+                  Like
+                  {% endif %}
+                  <span class="badge badge-light">{{ car.likes.all.count }}</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <form method="post" class="my-3">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-outline-primary btn-lg btn-block">
-            {% if user in car.likes.all %}
-              Unlike
-            {% else %}
-              Like
-            {% endif %}
-            <span class="badge badge-light">{{ car.likes.all.count }}</span>
-          </button>
-        </form>
+
+      <div class="card my-3">
+        <div class="card-body">
+          <h2 class="card-title">Comments</h2>
+          <form method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn btn-primary my-2">Add Comment</button>
+          </form>
+          {% if car.comments.all %}
+            {% for comment in car.comments.all %}
+              <div class="card my-3">
+                <div class="card-body">
+                  <h4 class="card-title">{{ comment.author }}</h4>
+                  <div class="container">
+                    <hr class="my-2">
+                  </div>
+                  <p class="card-text">{{ comment.text }}</p>
+                  <form method="POST" class="like-form" action="{% url 'like_comment' comment.id %}" id="{{ comment.id }}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary float-start btn-sm">
+                      {% if user in comment.likes.all %}
+                        Unlike
+                      {% else %}
+                        Like
+                      {% endif %}
+                      <span class="badge badge-light">{{ comment.likes.all.count }}</span>
+                    </button>
+                  </form>
+                  {% if user.is_authenticated %}
+                    {% if user == comment.author or user.is_superuser %}
+                    <form method="POST" action="{% url 'delete_comment' comment.id %}" class="delete-form float-end" id="{{ comment.id }}">
+                      {% csrf_token %}
+                      <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p>No comments yet</p>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
-
-
+</div>
 
 {%endblock%}
+
