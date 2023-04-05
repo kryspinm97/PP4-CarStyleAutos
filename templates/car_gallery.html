@@ -18,11 +18,13 @@
                 <img class="card-img-top h-100" src="{{ car.car_image.url }}">
                 <div class="card-body">
                     <h3 class="card-title text-center text-uppercase py-2 fw-bold">{{ car.make }} {{ car.model }}</h3>
+                    <p class="text muted text-center text-sm small">Posted on : {{ car.created_date|date:"F d, Y" }}</p>
                 <div class="text-center py-2">
                     <a href="{% url 'view_car_post' car.slug %}" class="btn btn-primary text-center py-2"> View Post</a>
                 </div>
-                <div class="card-footer text-muted small text-center">Author : {{ car.site_user.username }}
-                     <p class="float-end">Likes : {{ car.likes.all.count }}</p>
+                <div class="d-flex justify-content-center text-muted">
+                     <p class="text muted me-auto mb-0">Author : {{ car.site_user.username }}</p>
+                     <p class="text-muted mb-0">Likes : <i class="fa-solid fa-heart text-danger"></i> {{ car.likes.all.count }}</p>
                 </div>
             </div>
         </div>

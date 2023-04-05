@@ -33,9 +33,9 @@ class CarForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     text = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
-        'placeholder' : 'Leave a comment...',
+        'placeholder': 'Leave a comment...',
         'rows': 3,
-    }))
+    }), label='')
 
     class Meta:
         model = Comment

@@ -159,19 +159,6 @@ h2 {
 .btn-primary {
     background-color: #dc3545;
     border-color: #dc3545;
-    border-radius: 50px;
-}
-
-.btn-warning {
-    border-radius: 50px;
-}
-
-.btn-light {
-    border-radius: 50px;
-}
-
-.btn-dark {
-    border-radius: 50px;
 }
 
 .btn-primary:hover {
@@ -179,13 +166,8 @@ h2 {
     border-color: #c82333;
 }
 
-.btn-secondary {
-    border-radius: 50px;
-}
-
 .btn-social {
     color: #fff;
-    border-radius: 50%;
     padding: 0.5rem;
     margin-right: 0.5rem;
     transition: color 0.3 ease;
@@ -195,7 +177,6 @@ h2 {
     color: #fff;
     font-size: 1.1rem;
     border-color: #dc4545;
-    border-radius: 50px;
     background-color: #dc3545;
 }
 
@@ -203,7 +184,6 @@ h2 {
     color: #fff;
     font-size: 1.1rem;
     border-color: #333;
-    border-radius: 50px;
     background-color: #333;
 }
 

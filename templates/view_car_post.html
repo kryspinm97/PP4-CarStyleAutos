@@ -39,9 +39,9 @@
               <input type="hidden" name="action" value="{% if user in car.likes.all %}unlike{% else %}like{% endif %}">
               <button type="submit" class="btn btn-secondary btn-md">
                   {% if user in car.likes.all %}
-                  Unlike
+                  <i class="fa-solid fa-heart text-danger"></i>
                   {% else %}
-                  Like
+                  <i class="fa-solid fa-heart"></i>
                   {% endif %}
                   <span class="badge badge-light">{{ car.likes.all.count }}</span>
               </button>
@@ -52,17 +52,21 @@
 
       <div class="card my-3">
         <div class="card-body">
-          <h2 class="card-title">Comments</h2>
+          <h2 class="card-title fw-bold">Comments</h2>
           <form method="POST">
             {% csrf_token %}
             {{ comment_form.as_p }}
             <button type="submit" class="btn btn-primary my-2">Add Comment</button>
           </form>
+          <div class="container">
+            <hr class="my-5">
+          </div>
           {% if car.comments.all %}
             {% for comment in car.comments.all %}
               <div class="card my-3">
                 <div class="card-body">
-                  <h4 class="card-title">{{ comment.author }}</h4>
+                  <h4 class="card-title" style="color:#dd3345">{{ comment.author }}</h4>
+                  <p class="text-muted text-sm small">{{ comment.created_date|date:"F d, Y" }}</p>
                   <div class="container">
                     <hr class="my-2">
                   </div>
@@ -71,9 +75,9 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-secondary float-start btn-sm">
                       {% if user in comment.likes.all %}
-                        Unlike
+                      <i class="fa-solid fa-heart text-danger"></i>
                       {% else %}
-                        Like
+                      <i class="fa-solid fa-heart"></i>
                       {% endif %}
                       <span class="badge badge-light">{{ comment.likes.all.count }}</span>
                     </button>
