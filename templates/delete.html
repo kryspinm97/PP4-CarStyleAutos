@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">Success!</h4>
+        <p>You have successfully deleted your post!</p>
+        <hr>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to home</a>
+    </div>
+</div>
+{% endblock %}

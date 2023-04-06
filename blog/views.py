@@ -137,7 +137,7 @@ class DeleteCarView(UserPassesTestMixin, DeleteView):
 
     model = Car
     success_url = reverse_lazy('home')
-    template_name = 'car/delete.html'
+    template_name = 'delete.html'
 
     def test_func(self):
         car = self.get_object()
@@ -145,6 +145,15 @@ class DeleteCarView(UserPassesTestMixin, DeleteView):
             return True
         return False
 
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        context = {
+            'message': 'Post successfully deleted.'
+
+        }
+        return render(request, 'delete.html', context=context)
 
 class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
     def post(self, request, comment_id):
