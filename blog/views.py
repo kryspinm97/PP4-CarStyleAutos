@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.views import generic, View
 from django.views.decorators.http import require_POST
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
@@ -131,6 +131,19 @@ class ViewCarPost(View):
         else:
             context = {"car": car, "comment_form": comment_form, "user": request.user}
             return render(request, "view_car_post.html", context)
+
+
+class DeleteCarView(UserPassesTestMixin, DeleteView):
+
+    model = Car
+    success_url = reverse_lazy('home')
+    template_name = 'car/delete.html'
+
+    def test_func(self):
+        car = self.get_object()
+        if self.request.user.is_superuser or self.request.user == car.site_user:
+            return True
+        return False
 
 
 class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):

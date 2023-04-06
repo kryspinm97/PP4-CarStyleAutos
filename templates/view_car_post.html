@@ -32,8 +32,9 @@
         <div class="card-footer">
           <div class="d-flex justify-content-between align-items-center">
             <div class="author">
-              Author: {{ car.site_user.username }}
-            </div>
+              <p class="text-muted me-auto mb-0 fw-bold">Author: {{ car.site_user.username }}</p>
+              <p class="text-muted mb-0 text-sm small">{{ car.created_date|date:"F d, Y"}}</p>
+            </div>   
             <form method="POST" class="like-form" action="{% url 'like_car_post' car.id %}">
               {% csrf_token %}
               <input type="hidden" name="action" value="{% if user in car.likes.all %}unlike{% else %}like{% endif %}">
