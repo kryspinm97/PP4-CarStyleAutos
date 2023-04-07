@@ -155,6 +155,11 @@ h2 {
     border-color: #dc3545;
 }
 
+.btn-primary:focus, .btn-primary:active, .btn-primary:hover {
+    background-color: #ad3636 !important;
+    border-color:#ad3636 !important;
+}
+
 .btn-primary:hover {
     background-color: #c82333;
     border-color: #c82333;
@@ -195,27 +200,22 @@ h2 {
 
 .btn-facebook {
     background-color: #3b5998;
-    border-radius: 25px;
 }
 
 .btn-twitter {
     background-color: #55acee;
-    border-radius: 25px;
 }
 
 .btn-github {
     background-color: #000000;
-    border-radius: 25px;
 }
 
 .btn-google {
     background-color: #dd4b39;
-    border-radius: 25px;
 }
 
 .btn-instagram {
     background-color: #ac2bac;
-    border-radius: 25px;
 }
 
 /* --- BUTTON STYLING --- */
@@ -305,3 +305,7 @@ h2 {
   .modal-footer .btn-danger:hover {
     background-color: #c82333;
   }
+
+label .asteriskField {
+    display: none;
+}

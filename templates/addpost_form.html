@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
 
 <section class="add-post-form d-flex justify-content-center align-items-center">
@@ -17,27 +16,25 @@
                   {% csrf_token %}
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_make">Make</label>
-                    <input type="text" id="id_make" name="make" class="form-control" />
+                    <input type="text" id="id_make" name="make" class="form-control" required/>
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_model">Model</label>
-                    <input type="text" id="id_model" name="model" class="form-control" />
+                    <input type="text" id="id_model" name="model" class="form-control" required/>
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_year">Year</label>
-                    <input type="number" id="id_year" name="year" class="form-control" min="1900" max="2099" step="1" />
+                    <input type="number" id="id_year" name="year" class="form-control" min="1900" max="2099" step="1" required />
                   </div>
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="id_specifications">Specifications</label>
-                    <textarea id="id_specifications" name="specifications" class="form-control"></textarea>
+                    {{ car_form.specifications|as_crispy_field }}
                   </div>
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="id_rundown">Rundown</label>
-                    <textarea id="id_rundown" name="rundown" class="form-control"></textarea>
+                  <div class="form-outline mb-2">
+                    {{ car_form.rundown|as_crispy_field }}
                   </div>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="id_car_image">Image</label>
-                    <input type="file" id="id_car_image" name="car_image" class="form-control" />
+                    <input type="file" id="id_car_image" name="car_image" class="form-control" required/>
                   </div>
                   <div class="d-flex justify-content-center mx-4">
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
@@ -51,7 +48,5 @@
     </div>
   </div>
 </section>
-
-
 
 {% endblock %}

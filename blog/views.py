@@ -105,9 +105,8 @@ class AddPost(View):
             messages.success(request, "Post has been added Successfully")
             return redirect("cargallery")
         else:
-            # CarForm = CarForm()
-
-            return render(request, "addpost_form.html", {"car_form": CarForm})
+            car_form = CarForm()
+            return render(request, "addpost_form.html", {"car_form": car_form})
 
 
 class ViewCarPost(View):

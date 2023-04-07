@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django_summernote.fields import SummernoteTextFormField
+from django_summernote.fields import SummernoteTextField
+from django_summernote.widgets import SummernoteWidget
 
 # Create your models here.
 
@@ -20,7 +21,6 @@ class Car(models.Model):
     specifications = models.TextField()
     rundown = models.TextField()
     car_image = CloudinaryField("image")
-    
     likes = models.ManyToManyField(User, related_name="car_likes", blank=True)
 
     class Meta:
