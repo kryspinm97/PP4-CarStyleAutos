@@ -21,10 +21,13 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Default Dark+",
+   "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
    "terminal.integrated.gpuAcceleration": "canvas",
-   "editor.defaultFormatter": "HookyQR.beautify",
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
    "[python]": {
       "editor.defaultFormatter": "ms-python.black-formatter"
+   },
+   "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
    }
 }

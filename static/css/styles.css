@@ -133,8 +133,13 @@ h2 {
 
 /*-- CARDS --*/
 
-.card-image {
-    height: 250px;
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-img-view {
+    height: 600px;
     object-fit: cover;
 }
 

@@ -154,6 +154,7 @@ class DeleteCarView(UserPassesTestMixin, DeleteView):
         }
         return render(request, 'delete.html', context=context)
 
+
 class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
     def post(self, request, comment_id):
         comment = get_object_or_404(Comment, id=comment_id)
