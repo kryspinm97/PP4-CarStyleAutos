@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django_summernote.fields import SummernoteTextField
@@ -10,8 +11,8 @@ from django_summernote.widgets import SummernoteWidget
 class Car(models.Model):
     """Site User's Cars"""
 
-    make = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
+    make = models.CharField(max_length=50, blank=False)
+    model = models.CharField(max_length=50, blank=False)
     slug = models.SlugField(max_length=200, unique=True)
     site_user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="car_user"

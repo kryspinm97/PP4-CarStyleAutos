@@ -1,4 +1,6 @@
 from django.test import TestCase
+from django.core.exceptions import ValidationError
+from django.urls import reverse
 from django.contrib.auth.models import User
 from blog.models import Car, Comment
 
@@ -30,6 +32,21 @@ class CarModelTestCase(TestCase):
 
     def test_car_str_method(self):
         self.assertEqual(str(self.car), 'testuser : Camry (2020)')
+
+    def test_get_absolute_url(self):
+        self.assertEqual(self.car.get_absolute_url(), reverse('cargallery'))
+
+    def test_invalid_car_data(self):
+        with self.assertRaises(ValidationError):
+            car = Car.objects.create(
+                make='',
+                model='',
+                site_user=self.user,
+                year=2020,
+                specifications='<p> specs </p>',
+                rundown='<p> rundown </p>',
+                )
+            car.full_clean()
 
 
 class CommentModelTestCase(TestCase):
