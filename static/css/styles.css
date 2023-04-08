@@ -139,7 +139,6 @@ h2 {
 }
 
 .card-img-view {
-    height: 600px;
     object-fit: cover;
 }
 
@@ -175,32 +174,6 @@ h2 {
     padding: 0.5rem;
     margin-right: 0.5rem;
     transition: color 0.3 ease;
-}
-
-.btn-outline-success {
-    color: #fff;
-    font-size: 1.1rem;
-    border-color: #dc4545;
-    background-color: #dc3545;
-}
-
-.btn-outline-success.login {
-    color: #fff;
-    font-size: 1.1rem;
-    border-color: #333;
-    background-color: #333;
-}
-
-.btn.outline-success.login:hover {
-    color: #fff;
-    background-color: #dc4545;
-    border-color: #dc4545;
-}
-
-.btn-outline-success:hover {
-    color: #fff;
-    background-color: #c82333;
-    border-color: #c82333;
 }
 
 .btn-facebook {

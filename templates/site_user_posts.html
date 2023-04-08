@@ -14,7 +14,7 @@
         <img class="card-img-top h-100" src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }}">
         <div class="card-body">
           <h5 class="card-title text-center fw-bold text-uppercase">{{ car.make }} {{ car.model }} {{ car.year }}</h5>
-          <div class="text-center py-2">
+          <div class="d-flex justify-content-center btn-group text-center" role="group">
             <a href="{% url 'view_car_post' car.slug %}" class="btn btn-success text-center py-2">View Post</a>
             <a href="{% url 'edit_post' car.slug %}" class="btn btn-secondary text-center py-2">Edit Post</a>
             <a href="{% url 'delete_car' car.slug %}" class="btn btn-danger text-center py-2" data-bs-toggle="modal"
