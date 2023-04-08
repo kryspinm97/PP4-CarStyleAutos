@@ -1,5 +1,5 @@
 from django.test import TestCase
-from ..forms import CarForm, RegistrationForm, CommentForm
+from blog.forms import CarForm, RegistrationForm, CommentForm
 
 
 class RegistrationFormTestCase(TestCase):
@@ -7,9 +7,9 @@ class RegistrationFormTestCase(TestCase):
     def test_registration_form(self):
         form = RegistrationForm(data={
             'username': 'testuser',
-            'email': 'test@example.com',
-            'password1': 'testpassword123',
-            'password2': 'testpassword123',
+            'email': 'testuser@gmail.com',
+            'password1': 'testpassword',
+            'password2': 'testpassword',
         })
 
         self.assertTrue(form.is_valid())
@@ -24,10 +24,12 @@ class CarFormTestCase(TestCase):
             'year': 2020,
             'specifications': '<p> specs </p>',
             'rundown': '<p> rundownss </p>',
-            'car_image': 'car_image.jpg',
+            'car_image': '',
         })
 
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
+        self.assertIn('car_image', form.errors.keys())
+        self.assertEqual(form.errors['car_image'][0], 'No file selected!')
 
 
 class TestCommentForm(TestCase):
