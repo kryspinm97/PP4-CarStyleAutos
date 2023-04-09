@@ -87,3 +87,21 @@ class LogoutViewTestCase(TestCase):
         self.assertRedirects(response, reverse('home'))
         self.assertFalse(response.wsgi_request.user.is_authenticated)
 
+
+class RegisterViewTestCase(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('register')
+
+    def test_register_view_should_return_200(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_register_view_should_register_user(self):
+        data = {'username': 'testuser', 'email': 'testuser@example.com', 'password1': 'testpass', 'password2': 'testpass'}
+        response = self.client.post(self.url, data)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(User.objects.count(), 1)
+        self.assertEqual(User.objects.first().username, 'testuser')
+        self.assertEqual(User.objects.first().email, 'testuser@example.com')
