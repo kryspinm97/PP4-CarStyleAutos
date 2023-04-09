@@ -134,11 +134,17 @@ h2 {
 /*-- CARDS --*/
 
 .card-img-top {
-    height: 350px;
+    max-width: 100%;
+    max-height: 350px;
     object-fit: cover;
 }
 
 .card-img-view {
+    object-fit: cover;
+}
+
+.card-img-index {
+    height: 300px;
     object-fit: cover;
 }
 
@@ -284,6 +290,18 @@ h2 {
     background-color: #c82333;
   }
 
+/*------------------------------------*/
+
+/*-- DISABLE THE REQUIRED ASTERISK ON FORMS --*/
+
 label .asteriskField {
     display: none;
 }
+
+/*-- MEDIA QUERIES --*/
+
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+    .card-img-top {
+      height: 100%;
+    }
+  }

@@ -19,7 +19,7 @@
       {% for car in cars %}
       <div class="col">
         <div class="card h-100">
-          <img class="card-img-top" src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }}">
+          <img class="card-img-top" src="{{ car.car_image.url }}" alt="{{ car.make }} {{ car.model }}" style="object-fit: cover;">
           <div class="card-body">
             <h3 class="card-title text-uppercase fw-bold">{{ car.make }} {{ car.model }}</h3>
             <p class="card-text mb-3">Posted {{ car.created_date|timesince }} ago</p>
