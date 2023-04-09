@@ -100,7 +100,6 @@ class RegisterViewTestCase(TestCase):
     def test_register_view_should_register_user(self):
         data = {'username': 'testuser', 'email': 'testuser@example.com', 'password1': 'testpass', 'password2': 'testpass'}
         response = self.client.post(self.url, data)
-
         self.assertEqual(response.status_code, 302)
         self.assertEqual(User.objects.count(), 1)
         self.assertEqual(User.objects.first().username, 'testuser')
