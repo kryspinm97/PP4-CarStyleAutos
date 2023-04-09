@@ -73,3 +73,17 @@ class LoginViewTestCase(TestCase):
         response = self.client.post(self.url, data=data)
         self.assertRedirects(response, reverse('login'))
         self.assertFalse(response.wsgi_request.user.is_authenticated)
+
+
+class LogoutViewTestCase(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('logout')
+        self.user = User.objects.create_user('testuser', 'testuser@gmail.com', 'testpassword123')
+
+    def test_logout_view_should_logout_user(self):
+        self.client.login(username='testuser', password='testpassword123')
+        response = self.client.get(self.url)
+        self.assertRedirects(response, reverse('home'))
+        self.assertFalse(response.wsgi_request.user.is_authenticated)
+
