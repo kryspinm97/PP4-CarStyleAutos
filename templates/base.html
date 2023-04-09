@@ -24,7 +24,7 @@
 <body>
 
   <!-- Navigation Bar Section -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top py-2">
     <div class="container-fluid">
       <a class="navbar-brand text-decoration-none" href="{% url 'home' %}">Car<span>Style</span>Autos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -43,14 +43,14 @@
         <div class="d-flex align-items-center">
           {% if user.is_authenticated %}
             {% if user.is_superuser %}
-              <a href="{% url 'admin:index' %}" class="btn btn-dark text-center ms-1"><i class="fas fa-crown"></i></a>
+              <a href="{% url 'admin:index' %}" class="btn btn-dark text-center me-1"><i class="fas fa-crown"></i></a>
             {% endif %}
-            <a href="{% url 'logout' %}" class="btn btn-warning text-center ms-1" type="submit" data-bs-toggle="modal" data-bs-target="#logoutModal">{{ user.username }} | Logout</a>
-            <a href="{% url 'user_posts' username=request.user.username %}" class="btn btn-success ms-1" type="submit">My Posts</a>
-            <a href="{% url 'addpost' %}" class="btn btn-primary ms-1" type="submit">Add Post</a>
+            <a href="{% url 'logout' %}" class="btn btn-warning text-center me-1" type="submit" data-bs-toggle="modal" data-bs-target="#logoutModal">{{ user.username }} | Logout</a>
+            <a href="{% url 'user_posts' username=request.user.username %}" class="btn btn-success me-1" type="submit">My Posts</a>
+            <a href="{% url 'addpost' %}" class="btn btn-primary me-1" type="submit">Add Post</a>
           {% else %}
-            <a href="{% url 'login' %}" class="btn btn-secondary ms-1 text-center" type="submit">Login</a>
-            <a href="{% url 'register' %}" class="btn btn-primary ms-1" type="submit">Register</a>
+            <a href="{% url 'login' %}" class="btn btn-secondary me-1 text-center" type="submit">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-primary me-1" type="submit">Register</a>
           {% endif %}
         </div>
       </div>

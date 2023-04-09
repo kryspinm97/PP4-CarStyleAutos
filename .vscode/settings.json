@@ -21,7 +21,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Default Dark+ Experimental",
+   "workbench.colorTheme": "One Dark Pro",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "esbenp.prettier-vscode",
    "[python]": {
