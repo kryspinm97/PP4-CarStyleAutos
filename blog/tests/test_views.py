@@ -61,3 +61,15 @@ class LoginViewTestCase(TestCase):
     def test_login_view_should_return_200(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
+
+    def test_login_view_should_login_user(self):
+        data = {'username': 'testuser', 'password': 'testpassword123'}
+        response = self.client.post(self.url, data=data)
+        self.assertRedirects(response, reverse('home'))
+        self.assertTrue(response.wsgi_request.user.is_authenticated)
+
+    def test_login_view_invalid_credentials(self):
+        data = {'username': 'testuser', 'password': 'wrongpass'}
+        response = self.client.post(self.url, data=data)
+        self.assertRedirects(response, reverse('login'))
+        self.assertFalse(response.wsgi_request.user.is_authenticated)
