@@ -3,14 +3,12 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="home-image jumbotron-overlay jumbotron-fluid py-md-5">
-  <div class="container">
+<section class="home-image jumbotron-overlay jumbotron-fluid py-md-5 d-flex align-items-center">
+  <div class="container d-flex justify-content-center">
     <div class="hero-text text-center text-wrap">
       <h1 class="display-5 fs-1">Welcome to CarStyleAutos!</h1>
       <p class="lead fs-4">A Community built around the love for all types of automobiles</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Join Us</a>
-      </p>
+      <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Join Us</a>
     </div>
   </div>
 </section>

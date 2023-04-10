@@ -1,179 +1,236 @@
-# CarStyleAutos
+# CarStyleAutos #
 
-The website is a blog style application that allows the users to read and write articles about cars, as well as create an account, log in, like posts, comment and interact with the community.
-This is my fourth project, as part of my studies at a Full Stack Software Development course provided by Code Institute.
+* Here I have made a blog web application called - CarStyleAutos. It is a blog website aimed at a community of car enthusiasts that would like to share and  interact with others about certain cars/builds, share ideas. 
+<hr>
 
+![ScreenShot](./documents/readme_images/AmiResponsiveImg.png)
 
----
+The live version of the website is available for you here : <a href="https://carstyleautos-blog.herokuapp.com">CarStyleAutos</a>
 
-## CONTENTS
+# README CONTENTS # 
 
-* [User Experience](#user-experience-ux)
-  * [User Stories](#user-stories)
+<hr>
 
-* [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
+* ## [UX](#ux-1)
+   * [User Stories](#user-stories)
+   * [Agile Methodologies](#agile-methodologies)
+   * [The Scope](#1-scope)
+   * [Structure](#2-structure)
+   * [Skeleton](#3-skeleton)
+   * [Surface](#4-surface)
 
-* [Features](#features)
-  * [General Features on Each Page](#general-features-on-each-page)
-  * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
+* ## [Features](#features)
+    * [User Registration and Login](#user-registration-and-login)
+    * [Car Gallery](#car-gallery)
+    * [Commenting System](#commenting-system)
+    * [Responsive Design](#responsive-design)
+    * [Navigation Menu](#navigation-menu)
+    * [User Authorization and Authentication](#user-authentication-and-authorization)
 
-* [Technologies Used](#technologies-used)
-  * [Languages Used](#languages-used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+* ## [Deployment](#deployment-1)
+    * [Heroku Service](#herokucom-service)
+    * [Final Steps](#final-steps)
 
-* [Deployment & Local Development](#deployment--local-development)
-  * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
+* ## [Technologies Used]()
+    * [Languages Used](#languages)
+    * [Frameworks / Libraries](#frameworks--libraries--programs)
 
-* [Testing](#testing)
+* ## [Credits](#credits-1)
 
-* [Credits](#credits)
-  * [Code Used](#code-used)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgments](#acknowledgments)
+<hr>
 
----
+# UX #
 
-## User Experience (UX)
+## User Stories ##
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
-
-### User Stories
-
-Add your user stories here. You want to include first time visitors and returning visitors here as a minimum. Think about each group, and the experience and journey you want them to have on your site. It really helps to think about this before you start coding, and will really help with creating your wireframes.
-
-## Design
-
-👩🏻‍💻 View an example of a completed design section [here](https://github.com/kera-cudmore/earth-day-hackathon-2022#Design)
-
-### Colour Scheme
-
-Add all information about your colour scheme for your site here. You can explain why you choose the colours you did?
-
-I like to include a palette of the colour scheme here, my favourite site for creating a colour palette is [coolors](https://coolors.co/), but there are lots of other sites that also do the same thing, like [ColorSpace](https://mycolor.space/?hex=%23F5F5F5&sub=1), [Muzli Colors](https://colors.muz.li/), [Adobe Colour Wheel](https://color.adobe.com/create/color-wheel) and [Canva](https://www.canva.com/colors/color-palette-generator/) to name a few.
-
-### Typography
-
-If you've imported fonts to use in your project, add some information about them here. You can include information like:
-
-Why did you choose the font you have?
-Is this an accessibly friendly font?
-What weights have you included?
-
-I also like to include an image of the fonts chosen as a reference.
-
-[Google Fonts](https://fonts.google.com/) is a popular choice for importing fonts to use in your project, as it doesn't require you to download the fonts to use them.
-
-### Imagery
-
-Use this section to explain what sort of imagery you plan to use through your site.
-
-### Wireframes
-
-Add the images or links for your wireframes here.
-
-There are lots of different options to create your wireframes - Code Institute students can access [Balsamiq](https://balsamiq.com/) as part of the course.
-
-Some other options include [Figma](https://www.figma.com/), [AdobeXD](https://www.adobe.com/products/xd.html), [Sketch](https://www.sketch.com/?utm_source=google&utm_medium=cpc&adgroup=uxui&device=c&matchtype=e&utm_campaign=ADDICTMOBILE_SKETCH_GAD_DG_UK_T1_ALWAYS-ON_S_TRF_PROS_BRAND&utm_term=sketch&utm_source=google&utm_medium=cpc&utm_content=TOF_BRND__generic&hsa_acc=8710913982&hsa_cam=16831089317&hsa_grp=134620695759&hsa_ad=592060065319&hsa_src=g&hsa_tgt=kwd-14921750&hsa_kw=sketch&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwr4eYBhDrARIsANPywCjRIFn93DMezYnsyE5Fic_8l8kynJtut0GYMU01TiohHjwziFtlH0gaAhteEALw_wcB) and [Mockup](https://apps.apple.com/us/app/mockup-sketch-ui-ux/id1527554407) to name just a few! Or you can even go old school and get those wireframes completed using pen and paper. Just snap an image of the completed wireframes to add the images to the README.
-
-## Features
-
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/TheQuizArms#Features)
-
-This section can be used to explain what pages your site is made up of.
-
-### General features on each page
-
-If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
-
-I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
-
-### Future Implementations
-
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
-
-### Accessibility
-
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
-
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
-
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
-
-Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
-
-## Technologies Used
-
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
-
-### Languages Used
-
-Make a note here of all the languages used in creating your project. For the first project this will most likely just be HTML & CSS.
-
-### Frameworks, Libraries & Programs Used
-
-Add any frameworks, libraries or programs used while creating your project.
-
-Make sure to include things like git, GitHub, the program used to make your wireframes, any programs used to compress your images, did you use a CSS framework like Bootstrap? If so add it here (add the version used).
-
-A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
-
-## Deployment & Local Development
-
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here](https://github.com/kera-cudmore/TheQuizArms#Deployment)
-
-### Deployment
-
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
-
-### Local Development
-
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
-
-#### How to Fork
-
-Place instructions on how to fork your project here.
-
-#### How to Clone
-
-Place instructions on how to clone your project here.
-
-## Testing
-
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
-
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
+  * As the site owner I want : 
   
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+    * A visually appealing and professional looking website to attract users
+    * A simple and intuitive user interface that is easy to navigate
+    * The ability to manage user accounts and access
+    * The ability to manage and moderate user-generated content
+    * A responsive design that works well on variety of devices
+    * A way to communicate with users and provide support when neccessary
 
-## Credits
+  * As the user, I would want : 
 
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
+    * The ability to create an account and manage my posts
+    * An easy and efficient way to browse the content
+    * The ability to post and share my own content with the community
+    * The ability to like, comment and interact with other users content
+    * A responsive and user-friendly design that works well on any device
 
-The Credits section is where you can credit all the people and sources you used throughout your project.
+<hr>    
 
-### Code Used
+## Agile Methodologies ##
 
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
+The agile methodology approach was used here when creating my CarStyleAutos web application.
+I have achieved this by using the built in features of GitHub by creating a table of issues as well as the project to track the to-do list, and move them onto finished as I progressed with the sites features. 
 
-### Content
+The User-Stories were marked with the features that would be a : 
+- Must have
+- Could Add
 
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
+The application still being in progress, will have features added in the future with constant progression towards a fully completed application with a ton of features for the users to interact with.
 
-###  Media
+<hr>
 
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
-  
-###  Acknowledgments
+## 1. Scope ## 
 
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
+The website here aims to provide a platform for car enthusiasts to share their knowledge and passion for cars with a community of like-minded individuals. Users will be able to register an account, create posts, like and comment on other posts, and interact with other members of the community. The website will be simple and user-friendly, with a focus on providing a visually appealing and responsive design.
+
+<hr>
+
+## 2. Structure ##
+
+* Home Page - a landing page that provides an overview of the website and its features
+* Register Page - a page where users can create a new account by providing their name, email address and a password.
+* Login Page - a page where users can log in to their account using their email address and password
+* Gallery Page -  a page where users can view all car posts that have been posted by the community
+* My Posts Page - a page where the user can manage/delete/edit or view their posts.
+* Add Post Page - a page where the user can add their post to the gallery on CarStyleAutos 
+
+<hr>
+
+## 3. Skeleton ##
+
+Here is a basic wireframe of the website's layout : 
+![ScreenShot](./documents/readme_images/WireframeSketch.png)
+
+Here is the database schema for the project : 
+![ScreenShot](./documents/readme_images/DatabaseSchema.png)
+
+<hr>
+
+## 4. Surface ## 
+
+The design of CarStyleAutos is clean and modern, with a focus on readability and ease of use. The color scheme consists primarily of black,white, shades of gray, with red accents used sparingly for emphasis.
+
+
+### Colors -
+* The primary color used in the site is #333 for text, with red (#dc3545) used sparingly for emphasis. The following other colors are used :
+
+  * #f2f2f2: background color for body
+  * #fff: background color for navbar, modal and footer
+  * #dc3545: primary red color for buttons and text
+  * #333: primary text color
+  * #000000: shadow color for text
+  * #ddd: lighter shade of light gray color
+  * #eee: light gray color for button backgrounds
+  * #c82333: darker shade of primary red color
+
+### Layout -
+
+The layout of CarStyleAutos is responsive and adapts well to different screen sizes. Bootstrap being used here provides that functionality. The navbar is fixed at the top of the screen and is always visible, with the site logo and navigation linkes centered and spread between. The Hero section uses a large background image with a gradient overlay, with a centered heading and subheading along with a Join Us button. Cards are used throughout the site to display content, such as car images , posts previews and forms. Modals are used for login/logout functionalities as well as other forms such as Adding a post and Deleting it.
+The footer is fixed always to the bottom of the screen containing the site information and social media links.
+
+<hr>
+
+# Features #
+
+<hr>
+
+## User registration and login :
+- Users can create an account to access member-only features and log in to access their account in the future.
+![ScreenShot](./documents/readme_images/SignUpForm.png)
+![ScreenShot](./documents/readme_images/LoginForm.png)
+## Car Gallery :
+ - A collection of posts of different types of cars. Users can view these images, leave comments and like the post/comments.
+ ![ScreenShot](./documents/readme_images/GalleryPage.png)
+## User Posts :
+ - Each user can create, edit and delete their own posts that appear on the site for others to see.
+ ![ScreenShot](./documents/readme_images/MyPostsPage.png)
+## Commenting system : 
+- Users can leave comments on posts made by other users.
+ ![ScreenShot](./documents/readme_images/CommentView.png)
+## Responsive design : 
+- The site is designed to work on variety of devices and screen sizes.
+![ScreenShot](./documents/readme_images/MobileView.png)
+
+## Navigation menu :
+- A menu at the top of the page allows users to easily navigate between different pages on the site.
+![ScreenShot](./documents/readme_images/HomePage.png)
+## User authentication and authorization: 
+- The site ensures that only authorized users can access certain features or pages.
+![ScreenShot](./documents/readme_images/UserAuthorization.png)
+
+<hr>
+
+# Testing # 
+
+ * Place link here to TESTING.md file here. 
+
+ <hr>
+
+# Deployment #
+
+* ## Heroku.com Service ##
+
+  * Here we log in or create an account to begin with.
+  * On the dashboard view click 'Create New App' from the dropdown menu
+  * Choose your app-name and region
+  * Setup the CONFIG_VARS in the Settings tab in your project. 
+      * SECRET_KEY
+      * DATABASE_URL
+      * CLOUDINARY_URL
+
+      These three url's are to be set up and configured in your project.
+      These connect your Database , Cloudinary and your Django Enviroment Key.
+  * In the buildpack section in the settings tab add Python , then save changes.
+  * Last but not least Link your project under the Deploy tab by selecting it from your github repository.
+
+* ## Final Steps #
+
+  * Make sure your settings.py option DEBUG = True is set to FALSE.
+  * Ensure you have your Procfile created with the following code :
+      * web: gunicorn carstyleautos.wsgi
+
+
+* You can find the deployed version of the website here : <a href="https://carstyleautos-blog.herokuapp.com" target="_blank">CarStyleAutos</a>
+
+<hr>
+
+# Technologies Used #
+
+* ## Languages ##
+  * HTML
+  * CSS
+  * Python
+  * JavaScript
+
+* ## Frameworks / Libraries / Programs ##
+  * Django (Python web Framework) 
+  * jQuery (Javascript Library)
+  * Bootstrap (Front-End Library)
+  * Django-Crispy-Forms (Django Form Rendering Library)
+  * Psycopg2-Binary(PostgreSQL database adapter for Python)
+  * Balsamiq Wireframes(Wireframe Software to sketch initial design)
+  * GitHub (Version Control alongside a Local Development Enviroment)
+  * Font Awesome (Library of Icons)
+  * ElephantSQL (Hosting service for the database for this application)
+  * Cloudinary (Cloud based storage for all media files)
+  * Heroku (Application hosting service)
+  * Lucidchart (Online Application for Flowcharts/Diagrams)
+
+<hr>
+
+# Credits #
+
+### Coding ###
+
+* <a href="https://google.com">Google</a>
+* <a href="https://ui.dev/amiresponsive">AMI Responsive</a>
+* <a href="https://stackoverflow.com/">Stack Overflow</a>
+* <a href="https://youtube.com">YouTube</a>
+* <a href="https://w3schools.com">W3Schools</a>
+* <a href="https://https://codeinstitute.net/">Code Institute</a>
+* <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Boostrap Documentations</a>
+
+* All those resources were very valuable in the progression of my project whenever I was stuck at any point in time I refered back to the course material as well as the online resources.
+
+* All my images were sourced from google images, and any copyrights are reserved for the owners as these are just for display purposes only.
+
+
+### I would like to thank Code Institute for supplying me with the necessary guidance for this project. And Tutor support for certain things I was completely stuck at.
+
+[def]: #credits
