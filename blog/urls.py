@@ -24,3 +24,5 @@ urlpatterns = [
     path('cars/<slug:slug>/delete/', views.DeleteCarView.as_view(),
          name='delete_car'),
 ]
+
+handler404 = 'blog.views.handler404'

@@ -12,6 +12,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 from .models import Car, Comment
 from .forms import RegistrationForm, CarForm, CommentForm
 from django.utils.text import slugify
@@ -239,14 +241,18 @@ def edit_car_post(request, slug):
 
     else:
         form = CarForm(instance=car)
-        form.fields['rundown'].initial = car.rundown
-        form.fields['specifications'].initial = car.specifications
-        return render(request,
-                      'editpost_form.html',
-                      {'form': form, 'car': car})
+        helper = FormHelper()
+        helper.add_input(Submit('submit', 'Update Post'))
+        form.helper = helper
 
     context = {
-        'form': form
+        'form': form,
+        'car': car
     }
 
     return render(request, 'editpost_form.html', context)
+
+
+def handler404(request, exception):
+    # Display of the 404 Error in case of Error #
+    return render(request, '404.html', status=404)
