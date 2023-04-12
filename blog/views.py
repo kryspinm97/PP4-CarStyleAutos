@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -100,7 +99,8 @@ class AddPost(View):
         if car_form.is_valid():
             car = car_form.save(commit=False)
             car.site_user = request.user
-            car.slug = slugify(f"{car.make} {car.model} {car.year}").replace(" ", "-")
+            car.slug = slugify(
+                f"{car.make} {car.model} {car.year}").replace(" ", "-")
             car.save()
             messages.success(request, "Post has been added Successfully")
             return redirect("cargallery")
@@ -113,7 +113,8 @@ class ViewCarPost(View):
     def get(self, request, slug):
         car = get_object_or_404(Car, slug=slug)
         comment_form = CommentForm()
-        context = {"car": car, "comment_form": comment_form, "user": request.user}
+        context = {"car": car, "comment_form": comment_form,
+                   "user": request.user}
         return render(request, "view_car_post.html", context)
 
     def post(self, request, slug):
@@ -128,7 +129,8 @@ class ViewCarPost(View):
             messages.success(request, "Comment Added Successfully")
             return redirect("view_car_post", slug=slug)
         else:
-            context = {"car": car, "comment_form": comment_form, "user": request.user}
+            context = {"car": car, "comment_form": comment_form,
+                       "user": request.user}
             return render(request, "view_car_post.html", context)
 
 
@@ -140,7 +142,9 @@ class DeleteCarView(UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         car = self.get_object()
-        if self.request.user.is_superuser or self.request.user == car.site_user:
+        if self.request.user.is_superuser:
+            return True
+        if self.request.user == car.site_user:
             return True
         return False
 
@@ -163,14 +167,16 @@ class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
             comment.delete()
             messages.success(request, "Comment deleted successfully")
         else:
-            messages.error(request, "You are not authorized to delete this comment.")
+            messages.error(request,
+                           "You are not authorized to delete this comment.")
 
         return redirect("view_car_post", slug=comment.car.slug)
 
     def test_func(self):
         # Only allow staff or comment author to delete comment
         comment = get_object_or_404(Comment, id=self.kwargs["comment_id"])
-        return self.request.user == comment.author or self.request.user.is_staff
+        return any((self.request.user == comment.author,
+                    self.request.user.is_staff))
 
 
 class UserPostsListView(ListView):
@@ -185,7 +191,8 @@ class UserPostsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['site_user'] = get_object_or_404(User, username=self.kwargs['username'])
+        context['site_user'] = get_object_or_404(
+            User, username=self.kwargs['username'])
         return context
 
 
@@ -234,7 +241,9 @@ def edit_car_post(request, slug):
         form = CarForm(instance=car)
         form.fields['rundown'].initial = car.rundown
         form.fields['specifications'].initial = car.specifications
-        return render(request, 'editpost_form.html', {'form': form, 'car': car})
+        return render(request,
+                      'editpost_form.html',
+                      {'form': form, 'car': car})
 
     context = {
         'form': form

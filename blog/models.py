@@ -43,7 +43,8 @@ class Car(models.Model):
 class Comment(models.Model):
     """Comments on Car Post"""
 
-    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name="comments")
+    car = models.ForeignKey(Car, on_delete=models.CASCADE,
+                            related_name="comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="car_comments"
     )

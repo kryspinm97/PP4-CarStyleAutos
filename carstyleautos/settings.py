@@ -57,9 +57,9 @@ INSTALLED_APPS = [
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SUMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_THEME = "bs4"
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
 SUMMERNOTE_CONFIG = {
@@ -125,7 +125,8 @@ DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME":
+        "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -171,10 +172,10 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-if 'test' in sys.argv or 'test_coverage' in sys.argv:
+if "test" in sys.argv or "test_coverage" in sys.argv:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': ':memory:',
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ":memory:",
         }
     }

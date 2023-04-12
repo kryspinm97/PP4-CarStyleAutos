@@ -13,6 +13,7 @@ class CarAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('site_user', 'make', 'model', 'year')}
     search_fields = ['make', 'model', 'year']
 
+
 @admin.register(Comment)
 class CommentAdmin(SummernoteModelAdmin):
     """ Comment Admin Model """

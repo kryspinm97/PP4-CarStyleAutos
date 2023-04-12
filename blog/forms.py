@@ -18,7 +18,8 @@ class CarForm(forms.ModelForm):
     class Meta:
 
         model = Car
-        fields = ('make', 'model', 'year', 'specifications', 'rundown', 'car_image')
+        fields = ('make', 'model', 'year',
+                  'specifications', 'rundown', 'car_image')
         widgets = {
             'specifications': SummernoteWidget(),
             'rundown': SummernoteWidget(),

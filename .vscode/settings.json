@@ -21,7 +21,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Visual Studio Dark",
+   "workbench.colorTheme": "Default Dark+ Experimental",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "esbenp.prettier-vscode",
    "[python]": {
