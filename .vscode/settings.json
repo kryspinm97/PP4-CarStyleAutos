@@ -21,7 +21,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "One Dark Pro",
+   "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "esbenp.prettier-vscode",
    "[python]": {
@@ -29,5 +29,8 @@
    },
    "[html]": {
       "editor.defaultFormatter": "vscode.html-language-features"
+   },
+   "[css]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
    }
 }

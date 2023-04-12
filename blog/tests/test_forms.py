@@ -31,6 +31,17 @@ class CarFormTestCase(TestCase):
         self.assertIn('car_image', form.errors.keys())
         self.assertEqual(form.errors['car_image'][0], 'No file selected!')
 
+    def test_invalid_car_form(self):
+        form_data = {
+                'make': '',
+                'model': '',
+                'year': 2020,
+                'specifications': 'specs',
+                'rundown': 'runs',
+        }
+        form = CarForm(data=form_data)
+        self.assertFalse(form.is_valid())
+
 
 class TestCommentForm(TestCase):
 
@@ -40,3 +51,10 @@ class TestCommentForm(TestCase):
         })
 
         self.assertTrue(form.is_valid())
+
+    def test_invalid_comment_form(self):
+        form_data = {
+            'text': '',
+        }
+        form = CommentForm(data=form_data)
+        self.assertFalse(form.is_valid())

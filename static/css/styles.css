@@ -43,13 +43,13 @@ h2 {
 }
 
 .home-image {
-    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1680618530/static/images/cartest.ae3b3d7bddb9.jpg);
+    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1681240507/Red-AstonMartin_wyhugk.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 60vh;
     position: relative;
-    color:#fff;
+    color: #fff;
 }
 
 .home-image:before {
@@ -62,42 +62,28 @@ h2 {
     right: 0;
 }
 
-.home-image .display-5 {
+.home-image .display-5,
+.home-image .lead {
     font-size: 4rem;
     font-weight: 300;
     text-shadow: 1px 1px #000000;
 }
 
-.home-image .lead {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-shadow: 1px 1px #000000;
-}
-
-.home-image h1 {
+.home-image h1 .home-image p {
     font-size: 4rem;
     margin-bottom: 1rem;
 }
 
-.home-image p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.hero-text {
+.hero-text,
+.hero-text h1,
+.hero-text p {
     position: relative;
     z-index: 1;
     text-align: center;
 }
 
-.hero-text h1,
-.hero-text p {
-    position: relative;
-    z-index: 1;
-}
-
 .carousel-inner {
-    box-shadow: 0px 6px 10px rgba(0,0,0,0.9);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.9);
 }
 
 .carousel-item img {
@@ -120,7 +106,7 @@ h2 {
 /*-- CAR GALLERY --*/
 
 .hero-image-gallery {
-    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1680618528/static/images/ferrari-mclaren.42423c012a27.jpg);
+    background-image: url(https://res.cloudinary.com/dydgom4l5/image/upload/v1681240506/Ferrari-Mclaren_lgrsvy.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -158,7 +144,7 @@ h2 {
 }
 
 .card-home {
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /*-- CARDS --*/
@@ -174,21 +160,17 @@ h2 {
     border-color: #dc3545;
 }
 
-.btn-primary:focus, .btn-primary:active, .btn-primary:hover {
-    background-color: #ad3636 !important;
-    border-color:#ad3636 !important;
-}
-
+.btn-primary:focus,
+.btn-primary:active,
 .btn-primary:hover {
-    background-color: #c82333;
-    border-color: #c82333;
+    background-color: #ad3636 !important;
+    border-color: #ad3636 !important;
 }
 
 .btn-social {
     color: #fff;
     padding: 0.5rem;
     margin-right: 0.5rem;
-    transition: color 0.3 ease;
 }
 
 .btn-facebook {
@@ -220,13 +202,13 @@ h2 {
 }
 
 .login-page-image::before {
-    content:"";
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index:-1;
+    z-index: -1;
     background-size: cover;
     opacity: 0.6;
 }
@@ -240,14 +222,8 @@ h2 {
 
 /* --- LOGIN FORM --- */
 
-.register-form {
-    margin-top: auto;
-}
-
-.login-form {
-    margin-top: auto;
-}
-
+.register-form,
+.login-form,
 .add-post-form {
     margin-top: auto;
 }
@@ -259,45 +235,44 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     border-bottom: none;
     padding: 0;
-  }
-  
-  .modal-title {
+}
+
+.modal-title {
     font-size: 1.75rem;
     font-weight: bold;
     margin: 0;
-  }
-  
-  
-  .modal-footer {
+}
+
+.modal-footer {
     border-top: none;
-  }
-  
-  .modal-footer button {
+}
+
+.modal-footer button {
     background-color: #eee;
     border: none;
     color: #555;
     padding: 8px 16px;
-  }
-  
-  .modal-footer button:hover {
+}
+
+.modal-footer button:hover {
     background-color: #ddd;
-  }
-  
-  .modal-footer .btn-danger {
+}
+
+.modal-footer .btn-danger {
     background-color: #dc3545;
     border: none;
     color: #fff;
     padding: 8px 16px;
-  }
-  
-  .modal-footer .btn-danger:hover {
+}
+
+.modal-footer .btn-danger:hover {
     background-color: #c82333;
-  }
+}
 
 /*------------------------------------*/
 
@@ -311,6 +286,6 @@ label .asteriskField {
 
 @media screen and (min-width: 768px) and (max-width: 1399px) {
     .card-img-top {
-      height: 100%;
+        height: 100%;
     }
-  }
+}

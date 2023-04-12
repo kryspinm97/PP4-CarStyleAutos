@@ -6,7 +6,7 @@
 
 <!-- REGISTRATION FORM -->
 
-<section class="register-form">
+<div class="register-form">
   <div class="container py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-8 col-lg-6">
@@ -18,24 +18,24 @@
                 <form class="mx-1 mx-md-4" method="POST" action="{% url 'register' %}">
                   {% csrf_token %}
                   <div class="form-outline mb-4">
-                    <input type="text" id="id_username" name="username" class="form-control" />
+                    <input type="text" id="id_username" name="username" class="form-control">
                     <label class="form-label" for="id_username">Username</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="email" id="id_email" name="email" class="form-control" />
+                    <input type="email" id="id_email" name="email" class="form-control">
                     <label class="form-label" for="id_email">Email</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="password" id="id_password1" name="password1" class="form-control" />
+                    <input type="password" id="id_password1" name="password1" class="form-control">
                     <label class="form-label" for="id_password1">Password</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="password" id="id_password2" name="password2" class="form-control" />
+                    <input type="password" id="id_password2" name="password2" class="form-control">
                     <label class="form-label" for="id_password2">Repeat your password</label>
                   </div>
                   <div class="d-flex justify-content-center mb-4">
                     <div class="form-check">
-                      <label class="form-check-label" for="form2Example3">
+                      <label class="form-check-label">
                         Already a member? <a href="{% url 'login' %}">Login</a>
                       </label>
                     </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- REGISTRATION FORM -->
 
