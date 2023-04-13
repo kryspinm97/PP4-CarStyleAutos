@@ -8,6 +8,7 @@
 * [HTML Validator](#html-validator-w3c)
 * [Python Validator](#python-pep8-validator)
 * [Lighthouse Results](#lighthouse-performance-report)
+* [Bugs/Issues](#bugs--issues)
 
 <hr>
 
@@ -81,12 +82,18 @@ Here are the results of both.
 
 - I did notice it looks like there is a performance effect on the mobile version which I will tackle in optimising to it's best.
 
-# Bugs
+# Bugs / Issues
 
 ## Form Display :
 
 - I did notice when the car post is being edited, under the image field the name of the file is displayed twice. This is something that I have to look into more as it throws off the aesthetic.
 
-<hr>
+## Image Loading Time :
 
-* [Back to Top](#testing-documentation---carstyleautos)
+- I noticed that whenever I get into my Posts or gallery page, the page tend to loads a bit longer than usual. If car posts are going to be added in with high resolutions it will affect the performance negatively. Image caching or only allowing of certain formats will have to most likely be implemented to lower the loading times.
+
+## Admin Logout :
+
+- There seems to be an issue when logging out as admin in the administration panel , the page will throw up a Server Error 500 instead of bringing me back to the home page. Loading back into the home page then is fine and can just log in then as normal. Unusual behaviour and will have to be looked into further.
+
+<hr>

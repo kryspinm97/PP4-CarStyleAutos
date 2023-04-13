@@ -89,6 +89,7 @@ The website here aims to provide a platform for car enthusiasts to share their k
 * Gallery Page -  a page where users can view all car posts that have been posted by the community
 * My Posts Page - a page where the user can manage/delete/edit or view their posts.
 * Add Post Page - a page where the user can add their post to the gallery on CarStyleAutos 
+* Edit Post Page - a page where the user can edit their currently posted car
 
 <hr>
 
