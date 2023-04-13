@@ -20,11 +20,18 @@ from django.utils.text import slugify
 
 
 class Home(View):
+    """
+    Renders the home page of the website
+    """
     def get(self, request):
         return render(request, "index.html")
 
 
 class CarGallery(View):
+    """
+    Renders the car gallery page where all cars posted by users are displayed
+    It also implements pagination so that only six cars are displayed per page
+    """
     def get(self, request):
         car_list = Car.objects.all()
         paginator = Paginator(car_list, 6)  # Show 6 Cars per page
@@ -38,6 +45,11 @@ class CarGallery(View):
 
 
 class LoginView(SuccessMessageMixin, View):
+    """
+    Renders the login page where users can enter their credentials
+    to log into the website. It also handles the authentication and login
+    process and displays appropriate success/error messages
+    """
     template_name = "account/login.html"
     success_url = reverse_lazy("home")
     success_message = "You have logged in successfully!"
@@ -62,6 +74,11 @@ class LoginView(SuccessMessageMixin, View):
 
 
 class LogoutView(View):
+    """
+    Handles the logout process when a user clicks on the Logout button.
+    It logs out the user and redirects them to the home page with a
+    success message
+    """
     def get(self, request):
         logout(request)
         messages.success(request, "You have successfully logged out!")
@@ -69,6 +86,11 @@ class LogoutView(View):
 
 
 class RegisterView(View):
+    """
+    Renders the registration page where new users can register for an account
+    It also handles the registration process and displays appropriate success
+    and error messages.
+    """
     def get(self, request):
         return render(request, "account/register.html")
 
@@ -90,6 +112,9 @@ class RegisterView(View):
 
 
 class AddPost(View):
+    """
+    Handles GET and POST requests for adding a new car post
+    """
     def get(self, request):
 
         return render(request, "addpost_form.html", {"car_form": CarForm()})
@@ -112,6 +137,9 @@ class AddPost(View):
 
 
 class ViewCarPost(View):
+    """
+    Handles GET and POST requests for viewing a car post
+    """
     def get(self, request, slug):
         car = get_object_or_404(Car, slug=slug)
         comment_form = CommentForm()
@@ -137,7 +165,9 @@ class ViewCarPost(View):
 
 
 class DeleteCarView(UserPassesTestMixin, DeleteView):
-
+    """
+    Deletes the car post only if authorized.
+    """
     model = Car
     success_url = reverse_lazy('home')
     template_name = 'delete.html'
@@ -162,6 +192,9 @@ class DeleteCarView(UserPassesTestMixin, DeleteView):
 
 
 class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
+    """
+    Deletes a comment only if authorized.
+    """
     def post(self, request, comment_id):
         comment = get_object_or_404(Comment, id=comment_id)
 
@@ -182,6 +215,9 @@ class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, View):
 
 
 class UserPostsListView(ListView):
+    """
+    Displays all car posts made by a particular user
+    """
     model = Car
     template_name = 'site_user_posts.html'
     context_object_name = 'cars'
@@ -201,7 +237,9 @@ class UserPostsListView(ListView):
 @require_POST
 @login_required
 def like_comment(request, comment_id):
-
+    """
+    Allows logged in users to like or unlike a comment
+    """
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.likes.filter(id=request.user.id).exists():
@@ -214,7 +252,9 @@ def like_comment(request, comment_id):
 @login_required
 @require_POST
 def like_car_post(request, car_id):
-
+    """
+    Allows logged in users to like or unlike a car post
+    """
     car = get_object_or_404(Car, id=car_id)
 
     if car.likes.filter(id=request.user.id).exists():
@@ -226,6 +266,9 @@ def like_car_post(request, car_id):
 
 @login_required
 def edit_car_post(request, slug):
+    """
+    Allows authorized users to edit a car post in their Posts page.
+    """
     car = get_object_or_404(Car, slug=slug)
 
     if request.user != car.site_user:
@@ -254,5 +297,7 @@ def edit_car_post(request, slug):
 
 
 def handler404(request, exception):
-    # Display of the 404 Error in case of Error #
+    """
+    Displays a custom 404 error page.
+    """
     return render(request, '404.html', status=404)

@@ -14,6 +14,20 @@ class RegistrationFormTestCase(TestCase):
 
         self.assertTrue(form.is_valid())
 
+    def test_invalid_registration_form(self):
+        form_data = {
+            'username': '',
+            'email': '',
+            'password1': '',
+            'password2': '',
+        }
+        form = RegistrationForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('username', form.errors)
+        self.assertIn('email', form.errors)
+        self.assertIn('password1', form.errors)
+        self.assertIn('password2', form.errors)
+
 
 class CarFormTestCase(TestCase):
 

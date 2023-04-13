@@ -158,7 +158,9 @@ The footer is fixed always to the bottom of the screen containing the site infor
 
 # Testing # 
 
- * Place link here to TESTING.md file here. 
+ * I have created a seperate markdown documentation for the testing of this project. 
+
+ - You can view the testing here : [Testing.MD](./TESTING.md)
 
  <hr>
 
@@ -199,18 +201,18 @@ The footer is fixed always to the bottom of the screen containing the site infor
   * JavaScript
 
 * ## Frameworks / Libraries / Programs ##
-  * Django (Python web Framework) 
-  * jQuery (Javascript Library)
-  * Bootstrap (Front-End Library)
-  * Django-Crispy-Forms (Django Form Rendering Library)
-  * Psycopg2-Binary(PostgreSQL database adapter for Python)
-  * Balsamiq Wireframes(Wireframe Software to sketch initial design)
-  * GitHub (Version Control alongside a Local Development Enviroment)
-  * Font Awesome (Library of Icons)
-  * ElephantSQL (Hosting service for the database for this application)
-  * Cloudinary (Cloud based storage for all media files)
-  * Heroku (Application hosting service)
-  * Lucidchart (Online Application for Flowcharts/Diagrams)
+  * <a href="https://www.djangoproject.com/">Django (Python web Framework)</a> 
+  * <a href="https://jquery.com/">jQuery (Javascript Library)</a>
+  * <a href="https://getbootstrap.com/">Bootstrap (Front-End Library)</a>
+  * <a href="https://django-crispy-forms.readthedocs.io/en/latest/">Django-Crispy-Forms (Django Form Rendering Library)</a>
+  * <a href="https://pypi.org/project/psycopg2/">Psycopg2-Binary(PostgreSQL database adapter for Python)</a>
+  * <a href="https://balsamiq.com/wireframes/?gclid=CjwKCAjw0N6hBhAUEiwAXab-TS4-B3FwE_NpeSWRL6jqqSJMnuxinyknl1t_ddtaW_Jd3UAOvbxguhoC4agQAvD_BwE">Balsamiq Wireframes(Wireframe Software to sketch initial design)</a>
+  * <a href="https://github.com/">GitHub (Version Control alongside a Local Development Enviroment)</a>
+  * <a href="https://fontawesome.com/">Font Awesome (Library of Icons)</a>
+  * <a href="https://www.elephantsql.com/">ElephantSQL (Hosting service for the database for this application)</a>
+  * <a href="https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest">Cloudinary (Cloud based storage for all media files)</a>
+  * <a href="https://heroku.com/">Heroku (Application hosting service)</a>
+  * <a href="https://www.lucidchart.com/pages/">Lucidchart (Online Application for Flowcharts/Diagrams)</a>
 
 <hr>
 

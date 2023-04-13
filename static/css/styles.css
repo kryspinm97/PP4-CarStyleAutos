@@ -274,6 +274,12 @@ h2 {
     background-color: #c82333;
 }
 
+
+.view-post-hr {
+    border-top: 2px solid #dd3345;
+    width: 100%"
+}
+
 /*------------------------------------*/
 
 /*-- DISABLE THE REQUIRED ASTERISK ON FORMS --*/

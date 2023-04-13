@@ -7,6 +7,10 @@ from django_summernote.fields import SummernoteTextField
 
 
 class RegistrationForm(UserCreationForm):
+    """
+    A form for registering a new user
+    Inherits from UserCreationForm provided by Django
+    """
     email = forms.EmailField()
 
     class Meta:
@@ -15,6 +19,9 @@ class RegistrationForm(UserCreationForm):
 
 
 class CarForm(forms.ModelForm):
+    """
+    A form for creating or updating a car post
+    """
     class Meta:
 
         model = Car
@@ -26,11 +33,21 @@ class CarForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        """
+
+        Constructor for CarForm
+        Sets car_image field as required
+
+        """
         super().__init__(*args, **kwargs)
         self.fields['car_image'].required = True
 
 
 class CommentForm(forms.ModelForm):
+    """
+    A form for creating a comment on a car post
+    """
+
     text = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
         'placeholder': 'Leave a comment...',
